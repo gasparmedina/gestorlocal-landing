@@ -1,0 +1,13 @@
+{
+  "name": "gestorlocal-landing-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Recorder for the GestorLocal WhatsApp demo videos (Playwright + ffmpeg)",
+  "scripts": {
+    "record": "node record-demo.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}

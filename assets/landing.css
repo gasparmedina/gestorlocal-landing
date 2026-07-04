@@ -1,0 +1,449 @@
+/* ============================================================
+   GestorLocal — validation landing
+   Clean / sober (Setter AI · Linear vibe). System fonts only.
+   Mobile-first. Zero external dependencies.
+   ============================================================ */
+
+:root {
+  --ink: #101828;
+  --ink-soft: #475467;
+  --ink-faint: #667085;
+  --bg: #fcfcfb;
+  --card: #ffffff;
+  --line: #e7e5e0;
+  --brand: #075e54;
+  --brand-hover: #0a7a6d;
+  --accent: #0e9f6e;
+  --danger-strike: #98a2b3;
+  --radius: 14px;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.05), 0 4px 16px rgba(16, 24, 40, 0.05);
+  --shadow-phone: 0 24px 60px -18px rgba(7, 94, 84, 0.35), 0 6px 20px rgba(16, 24, 40, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* ---------- top bar (wordmark only, no nav) ---------- */
+.topbar {
+  padding: 22px 0 6px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark .dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0e9f6e, #075e54);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wordmark .dot svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+  align-items: center;
+  padding: 40px 0 24px;
+}
+
+.hero-copy .kicker {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: rgba(7, 94, 84, 0.07);
+  border: 1px solid rgba(7, 94, 84, 0.14);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(30px, 5.4vw, 46px);
+  line-height: 1.13;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+h1 .hl {
+  color: var(--brand);
+}
+
+.subhead {
+  font-size: clamp(16px, 2.1vw, 18.5px);
+  color: var(--ink-soft);
+  max-width: 34em;
+  margin-bottom: 28px;
+}
+
+.hero-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.hero-hint svg {
+  width: 17px;
+  height: 17px;
+  fill: var(--accent);
+  flex: none;
+}
+
+/* ---------- phone / demo ---------- */
+.demo-col {
+  display: flex;
+  justify-content: center;
+}
+
+.phone {
+  width: min(340px, 88vw);
+  aspect-ratio: 9 / 17.5;
+  border-radius: 38px;
+  padding: 10px;
+  background: #101418;
+  box-shadow: var(--shadow-phone);
+  position: relative;
+}
+
+.phone::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 17px;
+  background: #101418;
+  border-radius: 0 0 12px 12px;
+  z-index: 10;
+}
+
+.phone iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 29px;
+  background: #ece5dd;
+  display: block;
+}
+
+/* ---------- value bullets ---------- */
+.value {
+  padding: 44px 0 10px;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.value-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.value-card .ico {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(7, 94, 84, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  margin-bottom: 16px;
+}
+
+.value-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+/* ---------- pricing + CTA ---------- */
+.pricing {
+  padding: 54px 0 30px;
+}
+
+.price-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px clamp(22px, 5vw, 48px) 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0e9f6e, #075e54);
+}
+
+.price-card .plan-name {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+
+.price-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.price-now {
+  font-size: clamp(42px, 7vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.price-now small {
+  font-size: 0.38em;
+  font-weight: 600;
+  color: var(--ink-faint);
+  letter-spacing: 0;
+}
+
+.price-was {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 600;
+  color: var(--danger-strike);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.price-terms {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.price-context {
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  max-width: 36em;
+  margin: 0 auto 30px;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  padding: 17px 34px;
+  border-radius: 12px;
+  box-shadow: 0 10px 26px -8px rgba(7, 94, 84, 0.55);
+  transition: background 0.15s ease, transform 0.15s ease;
+  max-width: 100%;
+}
+
+.cta:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+}
+
+.cta-microcopy {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 16px;
+}
+
+.cta-privacy {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin-top: 10px;
+}
+
+.cta-privacy a {
+  color: var(--ink-faint);
+  text-decoration: underline;
+}
+
+/* ---------- footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 46px;
+  padding: 30px 0 40px;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+footer .legal-id {
+  max-width: 56em;
+  margin-bottom: 12px;
+}
+
+footer .foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+footer a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+footer a:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* ---------- legal pages ---------- */
+.legal-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 0 70px;
+}
+
+.legal-page h1 {
+  font-size: clamp(26px, 4vw, 34px);
+  margin: 26px 0 10px;
+}
+
+.legal-page .updated {
+  color: var(--ink-faint);
+  font-size: 13.5px;
+  margin-bottom: 30px;
+}
+
+.legal-page h2 {
+  font-size: 20px;
+  letter-spacing: -0.015em;
+  margin: 34px 0 10px;
+}
+
+.legal-page p,
+.legal-page li {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.legal-page ul {
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+
+.legal-page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  margin: 12px 0 18px;
+}
+
+.legal-page th,
+.legal-page td {
+  text-align: left;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+
+.legal-page th {
+  background: #f6f5f2;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legal-page a {
+  color: var(--brand);
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- desktop ---------- */
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    padding: 64px 0 30px;
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

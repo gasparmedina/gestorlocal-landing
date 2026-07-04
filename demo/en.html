@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chat demo — GestorLocal</title>
+<link rel="stylesheet" href="../assets/chat.css">
+<style>
+  html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #ece5dd; }
+  .wa-phone { width: 100%; height: 100%; }
+</style>
+<script>
+  // recorder support: ?zoom=3 renders the 360x640 layout on a 1080x1920 viewport
+  (function () {
+    var z = new URLSearchParams(location.search).get("zoom");
+    if (z) document.documentElement.style.zoom = z;
+  })();
+</script>
+</head>
+<body>
+
+<div class="wa-phone">
+  <div class="wa-statusbar">
+    <span>10:14 PM</span>
+    <span class="wa-sb-icons">
+      <svg viewBox="0 0 24 24"><path d="M2 22h20V2L2 22z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.34C7 21.4 7.6 22 8.33 22h7.34c.73 0 1.33-.6 1.33-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+    </span>
+  </div>
+
+  <div class="wa-header">
+    <span class="wa-back">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </span>
+    <span class="wa-avatar">AA</span>
+    <div class="wa-peer">
+      <div class="wa-peer-name">Aura Aesthetics Clinic</div>
+      <div class="wa-peer-status">online</div>
+    </div>
+    <div class="wa-header-icons">
+      <svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+    </div>
+  </div>
+
+  <div class="wa-messages">
+    <div class="wa-day">Today</div>
+    <div class="wa-e2e">🔒 Messages are end-to-end encrypted. No one outside of this chat can read them.</div>
+  </div>
+
+  <div class="wa-composer">
+    <div class="wa-input">
+      <svg viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-18a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM8.5 11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-8.2 3.3a.75.75 0 0 1 1.05-.15 6.5 6.5 0 0 0 7.3 0 .75.75 0 0 1 .9 1.2 8 8 0 0 1-9.1 0 .75.75 0 0 1-.15-1.05z"/></svg>
+      <span>Type a message</span>
+    </div>
+    <div class="wa-mic">
+      <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+    </div>
+  </div>
+
+  <div class="wa-endcard">
+    <div class="wa-endcard-inner">
+      <p class="wa-end-lead">By 8&nbsp;AM the clinic opens to a booked consult and a qualified lead.</p>
+      <p class="wa-end-strong"><em>Zero effort.</em><br>Zero after-hours leads lost.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+window.CHAT_CONFIG = {
+  statusOnline: "online",
+  statusTyping: "typing…",
+  messages: [
+    { from: "lead", gap: 500, time: "10:14 PM",
+      html: "Hi! Saw your Botox promo on Instagram. How much for forehead + frown lines?" },
+    { from: "bot", gap: 1500, time: "10:14 PM",
+      html: "Hi! 👋 Thanks for reaching out. Forehead and frown lines together are typically 2 areas — pricing depends on units, so the best way is a quick free consult. Have you had Botox before, or would this be your first time?" },
+    { from: "lead", gap: 3400, time: "10:15 PM",
+      html: "First time." },
+    { from: "bot", gap: 1300, time: "10:15 PM",
+      html: "Great — first-timers get a complimentary consult so we map exactly what you need. I can do <strong>tomorrow 11:00 AM</strong> or <strong>Thursday 5:30 PM</strong>. Which works?" },
+    { from: "lead", gap: 3200, time: "10:16 PM",
+      html: "Thursday 5:30 works." },
+    { from: "bot", gap: 1200, time: "10:16 PM",
+      html: "Done ✅ You're booked for <strong>Thursday 5:30 PM</strong> at 128 Kings Road. You'll get a reminder the day before. Message me here anytime. See you then!" }
+  ],
+  endcardGap: 2800,
+  endcardHold: 5200
+};
+</script>
+<script src="../assets/chat.js"></script>
+</body>
+</html>
