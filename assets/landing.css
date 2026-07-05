@@ -321,6 +321,17 @@ h1 .hl {
   margin-top: 16px;
 }
 
+.cta-guarantee {
+  font-size: 14px;
+  color: var(--ink);
+  background: #f0faf5;
+  border: 1px solid #c6ecd9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 12px auto 0;
+  max-width: 560px;
+}
+
 .cta-privacy {
   font-size: 12.5px;
   color: var(--ink-faint);
